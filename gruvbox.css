@@ -64,12 +64,38 @@
 }
 
 body {
-  background-color: var(--gruvbox-bg) !important;
+  font-size: 16px !important; /* Adjust as needed */
+  line-height: 1.6 !important; /* Good for readability */
   color: var(--gruvbox-fg) !important;
+  background-color: var(--gruvbox-bg) !important;
 }
 
 .header {
   background-color: var(--gruvbox-dark-gray) !important;
+}
+
+/* For the send message button, ensure proper contrast and visibility */
+button[data-testid="send-button"] {
+  background-color: var(--gruvbox-blue);
+  color: var(--gruvbox-fg);
+  border: 1px solid var(--gruvbox-fg); /* Optional: adds a border for better definition */
+}
+
+/* For the send button when disabled */
+button[data-testid="send-button"]:disabled {
+  background-color: var(--gruvbox-gray);
+  color: var(--gruvbox-dark-gray);
+  border: 1px solid var(--gruvbox-dark-gray);
+}
+
+/* Accessibility: Ensure that interactive elements have a focus style for keyboard navigation */
+button[data-testid="send-button"]:focus {
+  outline: 2px solid var(--gruvbox-yellow); /* Or use 'auto' for the browser default */
+}
+
+/* Adjusting icon colors within buttons, if necessary */
+button[data-testid="send-button"] svg {
+  fill: var(--gruvbox-fg);
 }
 
 input[type="text"],
@@ -84,6 +110,55 @@ textarea {
   font-weight: var(--font-weight-bold) !important;
 }
 
+[class*="text-gray"] {
+  color: var(--gruvbox-bg) !important;
+  font-weight: var(--font-weight-extra-bold) !important;
+}
+[class*="text-gray-600"] {
+  color: var(--gruvbox-fg) !important;
+}
+[class*="text-gray-400"] {
+  color: var(--gruvbox-fg) !important;
+}
+
+.bg-token-surface-secondary > a {
+  color: var(--black) !important;
+}
+.bg-token-surface-secondary > a:hover,
+.bg-token-surface-secondary > a:focus {
+    text-decoration: underline !important;
+}
+
+div:last-child > a[href="/gpts"] {
+  /* light rounded outline */
+  border: 1px solid var(--gruvbox-light-gray) !important;
+}
+
+/* Styling the button using data-testid attribute for specificity */
+button[data-testid="send-button"] {
+  background-color: var(--gruvbox-blue); /* Gruvbox blue for background */
+  color: var(--gruvbox-fg); /* Gruvbox light text color */
+  border-color: var(--gruvbox-red); /* Gruvbox red for border */
+  /* Other styles */
+}
+
+/* Styling for hover state */
+button[data-testid="send-button"]:hover {
+  background-color: var(--gruvbox-gray); /* Different color on hover */
+}
+
+/* Styling for disabled state */
+button[data-testid="send-button"]:disabled {
+  background-color: var(--gruvbox-bg); /* Dark background for disabled state */
+  color: var(--gruvbox-gray); /* Dimmed text color for disabled state */
+  opacity: 0.5; /* Adjust opacity for disabled state */
+}
+
+/* Styling the SVG icon inside the button */
+button[data-testid="send-button"] svg {
+  fill: var(--gruvbox-fg); /* Gruvbox foreground color for the icon */
+}
+
 [class*="text-token-text-secondary"] {
   color: var(--gruvbox-bg) !important;
   font-weight: var(--font-weight-extra-bold) !important;
@@ -92,6 +167,16 @@ textarea {
 [class*="prompt-"] {
   background-color: var(--gruvbox-bg) !important;
   font-weight: var(--font-weight-bold) !important;
+}
+
+/* Make text on dark backgrounds light */
+[class*="dark"] [class*="text-"] {
+  color: var(--gruvbox-fg) !important;
+}
+
+/* Remove the "New" button, I don't care that the Refer a Friend feature is new, so I will remove it with specificity */
+span.text-gray-800.uppercase.font-medium {
+  display: none;
 }
 
 /* Style the textarea */
@@ -131,6 +216,7 @@ a {
 a:hover {
   color: var(--gruvbox-purple) !important;
 }
+[class+="te]
 
 button {
   background-color: var(--gruvbox-dark-gray) !important;
@@ -148,6 +234,7 @@ h4,
 h5,
 h6 {
   color: var(--gruvbox-yellow) !important;
+  font-weight: var(--font-weight-extra-bold) !important;
 }
 
 .font-normal {
