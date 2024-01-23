@@ -1,0 +1,215 @@
+:root {
+  --gruvbox-bg: #282828 !important;
+  --gruvbox-fg: #ebdbb2 !important;
+  --gruvbox-red: #cc241d !important;
+  --gruvbox-green: #98971a !important;
+  --gruvbox-yellow: #d79921 !important;
+  --gruvbox-blue: #3c6e71 !important;
+  --gruvbox-purple: #b16286 !important;
+  --gruvbox-aqua: #689d6a !important;
+  --gruvbox-gray: #a89984 !important;
+  --gruvbox-dark-gray: #928374 !important;
+  --gruvbox-light-gray: #bdae93 !important;
+  --gruvbox-lighter-gray: #d5c4a1 !important;
+  --gruvbox-placeholder: #bdae93 !important;
+  --white: #ebdbb2 !important; /* Overriding white to match Gruvbox light text */
+  --black: #282828 !important; /* Overriding black to match Gruvbox dark background */
+  --gray-50: #fbf1c7 !important; /* Overriding for a lighter background */
+  --gray-100: #ebdbb2 !important; /* Overriding for light text */
+  --gray-200: #d5c4a1 !important; /* A slightly darker shade of gray */
+  --gray-300: #bdae93 !important; /* And so on, progressively getting darker */
+  --gray-400: #a89984 !important;
+  --gray-500: #928374 !important;
+  --gray-600: #7c6f64 !important;
+  --gray-700: #665c54 !important;
+  --gray-800: #504945 !important;
+  --gray-900: #3c3836 !important;
+  --gray-950: #282828 !important;
+  --gizmo-gray-500: #928374 !important;
+  --gizmo-gray-600: #7c6f64 !important;
+  --gizmo-gray-950: #282828 !important;
+  --brand-purple: #b16286 !important; /* Brand color overridden by Gruvbox purple */
+  --font-weight-normal: 400;
+  --font-weight-bold: 700; /* Standard bold */
+  --font-weight-extra-bold: 800;
+}
+
+.dark {
+  --text-primary: var(--gruvbox-fg) !important; /* Light text */
+  --text-secondary: var(
+    --gruvbox-light-gray
+  ) !important; /* Secondary text which is a bit dimmer */
+  --text-tertiary: var(
+    --gruvbox-gray
+  ) !important; /* Tertiary text which is even more dimmed */
+  --surface-primary: var(--gruvbox-bg) !important; /* Darkest background */
+  --surface-secondary: var(
+    --gruvbox-dark-gray
+  ) !important; /* Slightly lighter background */
+  --surface-tertiary: var(
+    --gruvbox-gray
+  ) !important; /* Even lighter background, but still dark */
+  --border-light: rgba(
+    181,
+    118,
+    134,
+    0.1
+  ) !important; /* Light border with a touch of purple */
+  --border-medium: rgba(
+    181,
+    118,
+    134,
+    0.15
+  ) !important; /* Medium border with a touch of purple */
+}
+
+body {
+  background-color: var(--gruvbox-bg) !important;
+  color: var(--gruvbox-fg) !important;
+}
+
+.header {
+  background-color: var(--gruvbox-dark-gray) !important;
+}
+
+input[type="text"],
+textarea {
+  background-color: var(--gruvbox-lighter-gray) !important;
+  color: var(--gruvbox-dark-gray) !important;
+  border: 1px solid var(--gruvbox-gray) !important;
+}
+
+[class*="text-"] {
+  color: var(--gruvbox-fg) !important;
+  font-weight: var(--font-weight-bold) !important;
+}
+
+[class*="text-token-text-secondary"] {
+  color: var(--gruvbox-bg) !important;
+  font-weight: var(--font-weight-extra-bold) !important;
+}
+
+[class*="prompt-"] {
+  background-color: var(--gruvbox-bg) !important;
+  font-weight: var(--font-weight-bold) !important;
+}
+
+/* Style the textarea */
+#prompt-textarea {
+  background-color: var(--gruvbox-bg) !important;
+  color: var(--gruvbox-fg) !important;
+  border: none !important; /* Removes border */
+  resize: none; /* Keeps resize-none */
+  max-height: 200px; /* Keeps max height */
+  overflow-y: hidden; /* Keeps overflow hidden */
+  padding: 10px 10px 10px 55px; /* Adjust padding as needed */
+}
+
+#prompt-textarea::placeholder {
+  color: var(--gruvbox-placeholder) !important;
+  opacity: 0.5; /* Adjust opacity as needed */
+}
+
+/* Adjust focus styles */
+#prompt-textarea:focus,
+#prompt-textarea:focus-visible {
+  outline: none !important; /* Removes outline */
+}
+
+[class*="bg-light-gray"] {
+  color: var(--gruvbox-bg) !important;
+}
+
+[class*="bg-gray"] {
+  color: var(--gruvbox-bg) !important;
+  background-color: var(--gruvbox-dark-gray) !important;
+}
+
+a {
+  color: var(--gruvbox-blue) !important;
+}
+a:hover {
+  color: var(--gruvbox-purple) !important;
+}
+
+button {
+  background-color: var(--gruvbox-dark-gray) !important;
+  color: var(--gruvbox-lighter-gray) !important;
+}
+button:hover {
+  background-color: var(--gruvbox-blue) !important;
+  color: var(--gruvbox-light-gray) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--gruvbox-yellow) !important;
+}
+
+.font-normal {
+  font-weight: var(--font-weight-bold) !important;
+}
+
+.navbar {
+  background-color: var(--gruvbox-dark-gray) !important;
+  color: var(--gruvbox-fg) !important;
+}
+
+.footer {
+  background-color: var(--gruvbox-dark-gray) !important;
+  color: var(--gruvbox-light-gray) !important;
+}
+
+.modal {
+  background-color: var(--gruvbox-bg) !important;
+  color: var(--gruvbox-fg) !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--gruvbox-bg) !important;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gruvbox-dark-gray) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gruvbox-gray) !important;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: var(--gruvbox-lighter-gray) !important;
+}
+
+.alert {
+  padding: 20px;
+  background-color: var(--gruvbox-yellow) !important;
+  color: var(--gruvbox-bg) !important;
+}
+.alert.closebtn {
+  margin-left: 15px;
+  color: var(--gruvbox-dark-gray);
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.alert.closebtn:hover {
+  color: var(--gruvbox-fg);
+}
